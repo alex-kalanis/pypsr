@@ -18,15 +18,26 @@ class LoggerInterface:
 
     See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
     for the full interface specification.
+
+    Notes
+    -----
+    The context param in methods is in dict format because it's prepared for usage of templated message.
     """
 
     def emergency(self, message: str, context: Optional[dict[str, Any]] = None) -> None:
         """
         System is unusable.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -37,9 +48,16 @@ class LoggerInterface:
         Example: Entire website down, database unavailable, etc. This should
         trigger the SMS alerts and wake you up.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -49,9 +67,16 @@ class LoggerInterface:
 
         Example: Application component unavailable, unexpected exception.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -60,9 +85,16 @@ class LoggerInterface:
         Runtime errors that do not require immediate action but should typically
         be logged and monitored.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -73,9 +105,16 @@ class LoggerInterface:
         Example: Use of deprecated APIs, poor use of an API, undesirable things
         that are not necessarily wrong.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -83,9 +122,16 @@ class LoggerInterface:
         """
         Normal but significant events.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -95,9 +141,16 @@ class LoggerInterface:
 
         Example: User logs in, SQL logs.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -105,9 +158,16 @@ class LoggerInterface:
         """
         Detailed debug information.
 
-        Args:
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -115,10 +175,18 @@ class LoggerInterface:
         """
         Logs with an arbitrary level.
 
-        Args:
-            level: The log level
-            message: The log message
-            context: Additional context information (default: {})
+        Parameters
+        ----------
+        level: LogLevel | str | int
+            The log level
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
+
+        Returns
+        -------
+        None
         """
         raise NotImplementedError('TBA')
 
@@ -134,10 +202,10 @@ class LoggerAwareInterface:
 
         Parameters
         ----------
-        logger
+        logger: LoggerInterface
 
         Returns
         -------
-
+        None
         """
         raise NotImplementedError('TBA')

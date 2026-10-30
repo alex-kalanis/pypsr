@@ -17,9 +17,16 @@ class LoggerTrait(LoggerInterface):
         """
         System is unusable.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message (string or object with __str__ method)
+        context: Optional[dict[str, Any]
+            Additional context information
+
+        Returns
+        -------
+        None
         """
         if context is None:
             context = {}
@@ -32,9 +39,16 @@ class LoggerTrait(LoggerInterface):
         Example: Entire website down, database unavailable, etc. This should
         trigger the SMS alerts and wake you up.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message (string or object with __str__ method)
+        context: Optional[dict[str, Any]
+            Additional context information
+
+        Returns
+        -------
+        None
         """
         if context is None:
             context = {}
@@ -46,9 +60,12 @@ class LoggerTrait(LoggerInterface):
 
         Example: Application component unavailable, unexpected exception.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
         """
         if context is None:
             context = {}
@@ -59,9 +76,12 @@ class LoggerTrait(LoggerInterface):
         Runtime errors that do not require immediate action but should typically
         be logged and monitored.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
         """
         if context is None:
             context = {}
@@ -74,9 +94,12 @@ class LoggerTrait(LoggerInterface):
         Example: Use of deprecated APIs, poor use of an API, undesirable things
         that are not necessarily wrong.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
         """
         if context is None:
             context = {}
@@ -86,9 +109,12 @@ class LoggerTrait(LoggerInterface):
         """
         Normal but significant events.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
         """
         if context is None:
             context = {}
@@ -100,9 +126,12 @@ class LoggerTrait(LoggerInterface):
 
         Example: User logs in, SQL logs.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
         """
         if context is None:
             context = {}
@@ -112,9 +141,12 @@ class LoggerTrait(LoggerInterface):
         """
         Detailed debug information.
 
-        Args:
-            message: The log message (string or object with __str__ method)
-            context: Additional context information
+        Parameters
+        ----------
+        message: str
+            The log message
+        context: dict[str, Any] or None
+            Additional context information (default: None)
         """
         if context is None:
             context = {}
@@ -135,9 +167,10 @@ class LoggerAwareTrait:
 
     def set_logger(self, logger: LoggerInterface) -> None:
         """
-        Sets a logger.
+        Sets a logger instance on the object.
 
-        Args:
-            logger: A logger instance implementing the LoggerInterface
+        Parameters
+        ----------
+        logger: LoggerInterface
         """
         self._logger = logger
