@@ -1,19 +1,19 @@
 [build-system]
-requires = [
-]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
 
 [project]
-name = "pysr"
-version = "1.0.0"
+name = 'pypsr'
+version = '0.1.0'
 description = "Python's PHP Standard Recommendations"
 authors = [
-    {name = "Petr Plsek"}
+    { name = 'Petr Plsek' }
 ]
 maintainers = [
-    {name = "Petr Plsek", email="me@kalanys.com"},
+    { name = 'Petr Plsek', email = 'me@kalanys.com' },
 ]
-requires-python = ">=3.5"
-readme = "README.md"
+requires-python = '>=3.9'
+readme = 'README.md'
 classifiers = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Science/Research',
@@ -21,45 +21,36 @@ classifiers = [
     'Programming Language :: PHP',
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
-    'Programming Language :: Python :: 3.7',
-    'Programming Language :: Python :: 3.8',
-    'Programming Language :: Python :: 3.9',
-    'Programming Language :: Python :: 3.10',
-    'Programming Language :: Python :: 3.11',
-    'Programming Language :: Python :: 3.12',
-    'Programming Language :: Python :: 3.13',
-    'Programming Language :: Python :: 3.14',
-    'Programming Language :: Python :: 3.15',
-    'Programming Language :: Python :: 3 :: Only',
     'Topic :: Software Development',
-    'Topic :: Scientific/Engineering',
     'Typing :: Typed',
-    'Operating System :: Microsoft :: Windows',
-    'Operating System :: POSIX',
-    'Operating System :: Unix',
-    'Operating System :: MacOS',
+    'Operating System :: OS Independent',
 ]
 # License info:
-#   - The main Pysr project license is MIT (as for PHP PSR).
+#   - The main pypsr project license is MIT (as for PHP PSR).
 #   - The legal license is Creative Commons Legal 3.0
 license = 'MIT AND CCL-3.0'
 license-files = [
     'LICENSE_MIT.md', # MIT-Clause
-    'LICENSE_CC.md',  # CCL3-Clause
+    'LICENSE_CC.md', # CCL3-Clause
+]
+keywords = ['php', 'psr', 'php-psr']
+
+[project.optional-dependencies]
+test = [
+    'pytest',
+]
+dev = [
+    'pytest',
 ]
 
 [project.urls]
-homepage = "https://www.php-fig.org/"
-documentation = "https://www.php-fig.org/psr/"
-source = "https://github.com/alex-kalanis/pysr"
-download = "https://pypi.org/project/pysr/#files"
-tracker = "https://github.com/alex-kalanis/pysr/issues"
+homepage = 'https://github.com/alex-kalanis/pypsr'
+documentation = 'https://www.php-fig.org/psr/'
+source = 'https://github.com/alex-kalanis/pypsr'
+download = 'https://pypi.org/project/pypsr/#files'
+tracker = 'https://github.com/alex-kalanis/pypsr/issues'
 
 ###########################################################
 
-[tool.cibuildwheel]
-# Note: the below skip command doesn't do much currently, the platforms to
-# build wheels for in CI are controlled in `.github/workflows/wheels.yml`.
-skip = []
+[tool.setuptools.packages.find]
+where = ["src"]
