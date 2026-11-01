@@ -28,10 +28,10 @@ classifiers = [
 # License info:
 #   - The main pypsr project license is MIT (as for PHP PSR).
 #   - The legal license is Creative Commons Legal 3.0
-license = 'MIT AND CCL-3.0'
+license = 'MIT AND CC-BY-3.0'
 license-files = [
-    'LICENSE_MIT.md', # MIT-Clause
-    'LICENSE_CC.md', # CCL3-Clause
+    'LICENSE-MIT.md', # MIT-Clause
+    'LICENSE-CC.md', # CC-BY-3-Clause
 ]
 keywords = ['php', 'psr', 'php-psr']
 
