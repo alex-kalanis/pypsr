@@ -1,4 +1,4 @@
-from pypsr.log.logger import EnumLevelsAdapter, LogLevel
+from ..logger import EnumLevelsAdapter, LogLevel
 
 
 class TestLogLevel:
@@ -13,7 +13,7 @@ class TestLogLevel:
         assert LogLevel.ERROR == EnumLevelsAdapter.number_to_level(99)
 
     def test_level_short(self) -> None:
-        assert 'crit' == EnumLevelsAdapter.level_to_number(LogLevel.CRITICAL)
+        assert 'crit' == EnumLevelsAdapter.level_to_short(LogLevel.CRITICAL)
 
     def test_short_level(self) -> None:
         assert LogLevel.CRITICAL == EnumLevelsAdapter.short_to_level('crit')

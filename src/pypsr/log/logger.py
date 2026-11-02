@@ -88,7 +88,7 @@ class EnumLevelsAdapter:
         return LogLevel.get_short_map().get(level, 'err')  # level error
 
 
-class AbstractLogger(LoggerInterface, LoggerTrait):
+class AbstractLogger(LoggerTrait, LoggerInterface):
     """
     This is a simple Logger implementation that other Loggers can inherit from.
 
