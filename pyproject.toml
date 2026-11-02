@@ -7,7 +7,17 @@ name = 'pypsr'
 version = '0.1.0'
 description = "Python's PHP Standard Recommendations"
 authors = [
-    { name = 'Petr Plsek' }
+    { name = 'PHP-FIG' },
+    { name = 'Jordi Boggiano' },
+    { name = 'Larry Garfield' },
+    { name = "Matthew Weier O'Phinney" },
+    { name = 'Matthieu Napoli' },
+    { name = 'David Négrier' },
+    { name = 'Woody Gilk' },
+    { name = 'Paul Dragoonis' },
+    { name = 'Tobias Nyholm' },
+    { name = 'Chris Seufert' },
+    { name = 'Petr Plsek' },
 ]
 maintainers = [
     { name = 'Petr Plsek', email = 'me@kalanys.com' },
